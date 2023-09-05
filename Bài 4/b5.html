@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let stores = [
+            { id: 1, name: "Milk", count: 100 },
+            { id: 2, name: "Yakult", count: 100 },
+            { id: 3, name: "Butter", count: 100, }
+        ];
+        let carts = [];
+        let checkCart = false;
+        let text
+        function print() {
+            console.log(stores, "Stores");
+            console.log(carts, "Carts");
+        }
+        do {
+            text = prompt("Nhập C/R/U/D");
+            if (text == "C") {
+                let product = prompt("Nhập Milk/Yakult/Butter");
+                for (let i = 0; i < stores.length; i++) {
+                    if (product == stores[i].name) {
+                        for (let j = 0; j < carts.length; j++) {
+                            if (carts[j].name == product) {
+                                carts[j].count++;
+                                checkCart = true;
+                                break;
+                            }
+                        }
+                        if (!checkCart) {
+                            let newobj = {
+                                id: 1,
+                                name: stores[i].name,
+                                count: 1
+                            }
+                            carts.push(newobj);
+                        }
+                        checkCart = false
+                        stores[i].count--;
+                    }
+                }
+            }
+            if (text == "R") {
+                print("Print Store and Cart");
+            }
+            if (text == "U") {
+                let viTri = +prompt("Nhập vị trí món hàng");
+                if (viTri < carts.length) {
+                    carts.findIndex((cartsItem) => {
+                        return true
+                    })
+                }
+            }
+            if (text=="D"){
+                let a=+prompt("nhap 1 so");
+                let deletee = stores.splice(0,a);
+                console.log(deletee);
+            }
+        } while (text != "E")
+
+    </script>
+</body>
+
+</html>

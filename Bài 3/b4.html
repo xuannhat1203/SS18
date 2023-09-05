@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let student = {
+            id: 1,
+            name: "Nguyễn Văn A",
+            gender: "Nam",
+            age: 20,
+            mark: 8
+        }
+        let newStudent = {
+            id: 2,
+            name: "Nguyễn Ngọc A",
+            gender: "Nữ",
+            age: 20,
+            mark: 9
+        }
+        let newStudent2 = {
+            id: 3,
+            name: "Nguyễn Ngọc B",
+            gender: "Nữ",
+            age: 20,
+            mark: 7
+        }
+        let students=[];
+        students.push(newStudent2);
+        students.push(newStudent);
+        students.push(student);
+        let diemTrungBinh = (newStudent.mark+newStudent2.mark+student.mark)/3;
+        console.log(diemTrungBinh);
+        if (diemTrungBinh>7.5){
+            console.log("Lớp này khá");
+
+        }else if (diemTrungBinh<7.5 && diemTrungBinh>5){
+            console.log("Lớp này trung bình");
+        }else {
+            console.log("Lớp này quá yếu kém");
+        }
+    </script>
+</body>
+
+</html>
